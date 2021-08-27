@@ -29,6 +29,9 @@ module.exports = {
       filename: 'style.css'
     })
   ],
+  resolve: {
+    extensions: ['.js', '.ts']
+  },
   module: {
     rules: [
       {
@@ -44,7 +47,7 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
       },
       {
-        test: /\.m?js$/,
+        test: /\.m?[jt]s$/,
         exclude: /node_modules/,
         use: {
           loader: "babel-loader",
